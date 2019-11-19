@@ -1,0 +1,15 @@
+<h1>Create New Merchant</h1>
+
+  <%= form_tag '/shelters', method: :post do %>
+    <p>Enter Shelter Name</p>
+    <%= text_field_tag :name %>
+    <p>Enter Shelter Address</p>
+    <%= text_field_tag :address %>
+    <p>Enter Shelter City</p>
+    <%= text_field_tag :city %>
+    <p>Enter Shelter State</p>
+    <%= text_field_tag :state %>
+    <p>Enter Shelter Zip</p>
+    <%= text_field_tag :zip %>
+    <%= submit_tag 'Submit' %>
+  <% end %>

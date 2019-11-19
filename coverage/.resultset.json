@@ -1,0 +1,52 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/davidgomez/turing/2module/projects/adopt_dont_shop/config/environment.rb": [
+        null,
+        1,
+        null,
+        null,
+        0
+      ],
+      "/Users/davidgomez/turing/2module/projects/adopt_dont_shop/config/application.rb": [
+        1,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0,
+        null,
+        null
+      ],
+      "/Users/davidgomez/turing/2module/projects/adopt_dont_shop/config/boot.rb": [
+        1,
+        null,
+        1
+      ]
+    },
+    "timestamp": 1574177582
+  }
+}

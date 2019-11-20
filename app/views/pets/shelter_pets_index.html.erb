@@ -1,0 +1,11 @@
+<h1>All Pets For: <%= @shelter.name %></h1>
+
+    <% @shelter.pets.each do |pet| %>
+  <section id = 'pet-<%= pet.id %>'>
+      <img src = <%= pet.image %> ></img>
+      <p>Shelter ID: <%= @shelter.id %></p>
+      <p>Name: <%= pet.name %></p>
+      <p>Age: <%= pet.age %></p>
+      <p>Sex: <%= pet.sex %></p>
+    <% end %>
+  </section>

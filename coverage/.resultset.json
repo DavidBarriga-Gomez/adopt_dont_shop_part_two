@@ -188,6 +188,7 @@
         1,
         1,
         1,
+        1,
         null,
         1,
         null
@@ -428,6 +429,11 @@
         1,
         null,
         null,
+        1,
+        null,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/davidgomez/turing/2module/projects/adopt_dont_shop/app/controllers/application_controller.rb": [
@@ -488,6 +494,6 @@
         null
       ]
     },
-    "timestamp": 1574271023
+    "timestamp": 1574287434
   }
 }

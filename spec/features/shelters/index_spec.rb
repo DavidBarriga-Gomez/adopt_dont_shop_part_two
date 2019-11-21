@@ -28,4 +28,19 @@ RSpec.describe 'As a visitor when I visit /shelters', type: :feature do
 
       expect(current_path).to eq("/shelters/#{@raccoon_shelter.id}")
   end
+
+  it 'There is a link to delete each shelter on the index page' do
+    visit '/shelters'
+
+    within "#shelter-#{@raccoon_shelter.id}" do
+      expect(page).to have_content(@raccoon_shelter.name)
+      expect(page).to have_link('Delete Shelter')
+
+      click_on 'Delete Shelter'
+    end
+
+      expect(current_path).to eq('/shelters')
+
+      expect(page).to_not have_content(@raccoon_shelter.name)
+  end
 end

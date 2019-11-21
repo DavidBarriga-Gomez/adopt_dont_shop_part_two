@@ -4,6 +4,7 @@
   <section id = 'shelter-<%= shelter.id %>'>
     <h4> <%= shelter.name %> </h4>
     <h5> <%= link_to 'Update Shelter', "/shelters/#{shelter.id}" %> </h5>
+    <h5> <%= link_to 'Delete Shelter', "/shelters/#{shelter.id}", method: :delete %> </h5>
   </section>
 <% end %>
 <h3> <%= link_to 'New Shelter', '/shelters/new' %> </h3>

@@ -14,4 +14,18 @@ RSpec.describe 'As a visitor when I visit /shelters', type: :feature do
     expect(page).to have_content(@dog_shelter.name)
     expect(page).to have_content(@cat_shelter.name)
   end
+
+  it 'There is a link to edit each shelter on the index page' do
+    visit '/shelters'
+
+    within "#shelter-#{@raccoon_shelter.id}" do
+      expect(page).to have_content(@raccoon_shelter.name)
+
+      expect(page).to have_link('Update Shelter')
+
+      click_on ('Update Shelter')
+    end
+
+      expect(current_path).to eq("/shelters/#{@raccoon_shelter.id}")
+  end
 end

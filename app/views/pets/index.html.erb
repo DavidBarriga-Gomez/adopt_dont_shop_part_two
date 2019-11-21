@@ -1,9 +1,12 @@
 <h1> All Adoptable Pets </h1>
 
   <% @pets.each do |pet| %>
-    <img src = <%= pet.image %> ></img>
-    <p>Shelter: <%= pet.shelter.name %></p>
-    <p>Name: <%= pet.name %></p>
-    <p>Age: <%= pet.age %></p>
-    <p>Sex: <%= pet.sex %></p>
+    <section id = 'pet-<%= pet.id %>'>
+      <img src = <%= pet.image %> ></img>
+      <p>Shelter: <%= pet.shelter.name %></p>
+      <p>Name: <%= pet.name %></p>
+      <p>Age: <%= pet.age %></p>
+      <p>Sex: <%= pet.sex %></p>
+      <%= link_to 'Update Pet', "/pets/#{pet.id}/edit" %>
+    </section>
   <% end %>

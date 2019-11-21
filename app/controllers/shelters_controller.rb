@@ -43,6 +43,8 @@ class SheltersController < ApplicationController
 
 ########### PRIVATE METHODS ###########
 
+private
+
   def shelter_params
     params.permit(:name, :address, :city, :state, :zip)
   end

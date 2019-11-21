@@ -51,6 +51,8 @@ class PetsController < ApplicationController
 
   ########### PRIVATE METHODS ###########
 
+private
+
   def pet_params
     params.permit(:image, :name, :description, :age, :sex, :status, :shelter_id)
   end

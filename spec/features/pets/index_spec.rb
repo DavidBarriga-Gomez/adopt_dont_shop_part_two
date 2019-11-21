@@ -46,11 +46,46 @@ RSpec.describe 'As a User', type: :feature do
       expect(page).to have_content(@raccoon.age)
       expect(page).to have_content(@raccoon.sex)
     end
-      # 
+
       # expect(page).to_not have_css("img[src*='https://image.pbs.org/video-assets/x1WLcZn-asset-mezzanine-16x9-6kkb4dA.jpg']")
       # expect(page).to_not have_content("Shelter ID: #{@foxy.shelter.id}")
       # expect(page).to_not have_content(@foxy.name)
       # expect(page).to_not have_content(@foxy.age)
       # expect(page).to_not have_content(@foxy.sex)
+  end
+
+  it 'I can update a pet from pet index page' do
+    visit '/pets'
+
+    within "#pet-#{@elena.id}" do
+      expect(page).to have_css("img[src*='https://imgix.ranker.com/user_node_img/50070/1001387908/original/1-photo-u1?w=650&q=50&fm=pjpg&fit=crop&crop=faces']")
+      expect(page).to have_content(@elena.shelter.name)
+      expect(page).to have_content(@elena.name)
+      expect(page).to have_content(@elena.age)
+      # expect(page).to have_content(@elena.sex)
+
+      expect(page).to have_link('Update Pet')
+
+      click_on 'Update Pet'
+    end
+      expect(current_path).to eq("/pets/#{@elena.id}/edit")
+  end
+
+  it 'I can update a pet from pet index page' do
+    visit "/shelters/#{@raccoon_shelter.id}/pets"
+
+    within "#pet-#{@elena.id}" do
+      # expect(page).to have_css("img[src*='https://imgix.ranker.com/user_node_img/50070/1001387908/original/1-photo-u1?w=650&q=50&fm=pjpg&fit=crop&crop=faces']")
+      # expect(page).to have_content(@elena.shelter.name)
+      # expect(page).to have_content(@elena.name)
+      # expect(page).to have_content(@elena.age)
+      # expect(page).to have_content(@elena.sex)
+
+      expect(page).to have_link('Update Pet')
+      click_on 'Update Pet'
+      end
+
+      expect(current_path).to eq("/shelters/#{@raccoon_shelter.id}/pets/#{@elena.id}/edit")
+      save_and_open_pager
   end
 end

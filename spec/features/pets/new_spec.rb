@@ -43,7 +43,5 @@ RSpec.describe 'As a User', type: :feature do
     expect(page).to have_content(age)
     expect(page).to have_content(sex)
     expect(Pet.last.status).to eq('adoptable')
-    save_and_open_page
-    
   end
 end

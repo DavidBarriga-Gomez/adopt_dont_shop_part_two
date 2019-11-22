@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-11-21T18:25:31-07:00">2019-11-21T18:25:31-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-11-21T18:42:02-07:00">2019-11-21T18:42:02-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.27
+         1.29
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>31</b> files in total.
-    <b>442</b> relevant lines. 
-    <span class="green"><b>442</b> lines covered</span> and
+    <b>453</b> relevant lines. 
+    <span class="green"><b>453</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -67,7 +67,7 @@
         <td>26</td>
         <td>26</td>
         <td>0</td>
-        <td>1.8</td>
+        <td>1.9</td>
       </tr>
       
       <tr>
@@ -263,9 +263,9 @@
       <tr>
         <td class="strong"><a href="#afea0ea853ba904ead1c55a28502a14e3d27b227" class="src_link" title="spec/features/pets/index_spec.rb">spec/features/pets/index_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>149</td>
-        <td>88</td>
-        <td>88</td>
+        <td>165</td>
+        <td>94</td>
+        <td>94</td>
         <td>0</td>
         <td>1.6</td>
       </tr>
@@ -283,11 +283,11 @@
       <tr>
         <td class="strong"><a href="#aa89c26fb6ce35a95aebe23ba052431a1db4c5d6" class="src_link" title="spec/features/pets/show_spec.rb">spec/features/pets/show_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>31</td>
-        <td>22</td>
-        <td>22</td>
+        <td>47</td>
+        <td>27</td>
+        <td>27</td>
         <td>0</td>
-        <td>1.0</td>
+        <td>1.3</td>
       </tr>
       
       <tr>
@@ -469,8 +469,8 @@
           <code class="ruby">  def shelter_pets_index</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="8">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="8">
+          <span class="hits">7</span>
           
           <code class="ruby">    @shelter = Shelter.find(params[:shelter_id])</code>
         </li>
@@ -493,8 +493,8 @@
           <code class="ruby">  def show</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="12">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="7" data-linenumber="12">
+          <span class="hits">7</span>
           
           <code class="ruby">    @pet = Pet.find(params[:id])</code>
         </li>
@@ -3006,8 +3006,8 @@
     <h3>spec/features/pets/index_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>88</b> relevant lines. 
-      <span class="green"><b>88</b> lines covered</span> and
+      <b>94</b> relevant lines. 
+      <span class="green"><b>94</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -3039,20 +3039,20 @@
           <code class="ruby">  before(:each) do</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="5">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="9" data-linenumber="5">
+          <span class="hits">9</span>
           
           <code class="ruby">    @raccoon_shelter = Shelter.create(name: &#39;Raccoon Shelter&#39;, address: &#39;Raccoon Road&#39;, city: &#39;Raccoon State&#39;, state: &#39;Raccoon City&#39;, zip: &#39;80237&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="6">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="9" data-linenumber="6">
+          <span class="hits">9</span>
           
           <code class="ruby">    @dog_shelter = Shelter.create(name: &#39;Dog Shelter&#39;, address: &#39;Dog Road&#39;, city: &#39;Dog City&#39;, state: &#39;Dog State&#39;, zip: &#39;80238&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="7">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="9" data-linenumber="7">
+          <span class="hits">9</span>
           
           <code class="ruby">    @cat_shelter = Shelter.create(name: &#39;Cat Shelter&#39;, address: &#39;Cat Road&#39;, city: &#39;Cat City&#39;, state: &#39;Cat State&#39;, zip: &#39;80239&#39;)</code>
         </li>
@@ -3063,26 +3063,26 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="9">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="9" data-linenumber="9">
+          <span class="hits">9</span>
           
           <code class="ruby">    @elena = @raccoon_shelter.pets.create(image: &#39;https://imgix.ranker.com/user_node_img/50070/1001387908/original/1-photo-u1?w=650&amp;q=50&amp;fm=pjpg&amp;fit=crop&amp;crop=faces&#39;, name: &#39;Elena&#39;, age: 27, sex: &#39;Female&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="10">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="9" data-linenumber="10">
+          <span class="hits">9</span>
           
           <code class="ruby">    @raccoon = @raccoon_shelter.pets.create(image: &#39;https://imgix.ranker.com/user_node_img/50070/1001387908/original/1-photo-u1?w=650&amp;q=50&amp;fm=pjpg&amp;fit=crop&amp;crop=faces&#39;, name: &#39;Racccoon&#39;, age: 5, sex: &#39;Male&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="11">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="9" data-linenumber="11">
+          <span class="hits">9</span>
           
           <code class="ruby">    @foxy = @dog_shelter.pets.create(image: &#39;https://image.pbs.org/video-assets/x1WLcZn-asset-mezzanine-16x9-6kkb4dA.jpg&#39;, name: &#39;Foxy&#39;, age: 5, sex: &#39;Female&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="12">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="9" data-linenumber="12">
+          <span class="hits">9</span>
           
           <code class="ruby">    @goblin = @cat_shelter.pets.create(image: &#39;https://static.boredpanda.com/blog/wp-content/uploads/2016/02/big-cute-eyes-cat-black-scottish-fold-gimo-1room1cat-fb__700-png.jpg&#39;, name: &#39;Goblin&#39;, age: 5, sex: &#39;Female&#39;)</code>
         </li>
@@ -3894,16 +3894,112 @@
         <li class="never" data-hits="" data-linenumber="147">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="148">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="149">
+        <li class="covered" data-hits="1" data-linenumber="149">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;pet name is a link that takes me to pet show page&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="150">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      visit &quot;/shelters/#{@raccoon_shelter.id}/pets&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="151">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="152">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(page).to have_link(@elena.name)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="153">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      save_and_open_page</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="154">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="155">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      click_on(@elena.name)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="156">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="157">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(current_path).to eq(&quot;/pets/#{@elena.id}&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="158">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="159">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="160">
+          
+          
+          <code class="ruby">#   User Story 18, Pet Links</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="161">
+          
+          
+          <code class="ruby">#</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="162">
+          
+          
+          <code class="ruby"># As a visitor</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="163">
+          
+          
+          <code class="ruby"># When I click on the name a pet anywhere on the site</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="164">
+          
+          
+          <code class="ruby"># Then that link takes me to that Pet&#39;s show page</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="165">
           
           
           <code class="ruby">end</code>
@@ -4220,8 +4316,8 @@
     <h3>spec/features/pets/show_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>22</b> relevant lines. 
-      <span class="green"><b>22</b> lines covered</span> and
+      <b>27</b> relevant lines. 
+      <span class="green"><b>27</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -4253,20 +4349,20 @@
           <code class="ruby">  before(:each) do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="5">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="5">
+          <span class="hits">2</span>
           
           <code class="ruby">    @raccoon_shelter = Shelter.create(name: &#39;Raccoon Shelter&#39;, address: &#39;Raccoon Road&#39;, city: &#39;Raccoon State&#39;, state: &#39;Raccoon City&#39;, zip: &#39;80237&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="6">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="6">
+          <span class="hits">2</span>
           
           <code class="ruby">    @dog_shelter = Shelter.create(name: &#39;Dog Shelter&#39;, address: &#39;Dog Road&#39;, city: &#39;Dog City&#39;, state: &#39;Dog State&#39;, zip: &#39;80238&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="7">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="7">
+          <span class="hits">2</span>
           
           <code class="ruby">    @cat_shelter = Shelter.create(name: &#39;Cat Shelter&#39;, address: &#39;Cat Road&#39;, city: &#39;Cat City&#39;, state: &#39;Cat State&#39;, zip: &#39;80239&#39;)</code>
         </li>
@@ -4277,26 +4373,26 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="9">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="9">
+          <span class="hits">2</span>
           
           <code class="ruby">    @elena = @raccoon_shelter.pets.create(image: &#39;https://imgix.ranker.com/user_node_img/50070/1001387908/original/1-photo-u1?w=650&amp;q=50&amp;fm=pjpg&amp;fit=crop&amp;crop=faces&#39;, name: &#39;Elena&#39;, age: 27, sex: &#39;Female&#39;, description: &#39;This raccoon likes power.&#39;, status: &#39;pending&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="10">
+          <span class="hits">2</span>
           
           <code class="ruby">    @raccoon = @raccoon_shelter.pets.create(image: &#39;https://imgix.ranker.com/user_node_img/50070/1001387908/original/1-photo-u1?w=650&amp;q=50&amp;fm=pjpg&amp;fit=crop&amp;crop=faces&#39;, name: &#39;Racccoon&#39;, age: 5, sex: &#39;Male&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="11">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="11">
+          <span class="hits">2</span>
           
           <code class="ruby">    @foxy = @dog_shelter.pets.create(image: &#39;https://image.pbs.org/video-assets/x1WLcZn-asset-mezzanine-16x9-6kkb4dA.jpg&#39;, name: &#39;Foxy&#39;, age: 5, sex: &#39;Female&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="12">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="12">
+          <span class="hits">2</span>
           
           <code class="ruby">    @goblin = @cat_shelter.pets.create(image: &#39;https://static.boredpanda.com/blog/wp-content/uploads/2016/02/big-cute-eyes-cat-black-scottish-fold-gimo-1room1cat-fb__700-png.jpg&#39;, name: &#39;Goblin&#39;, age: 5, sex: &#39;Female&#39;)</code>
         </li>
@@ -4410,6 +4506,102 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="32">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &#39;pet name is a link that takes me to pet show page&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="33">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    visit &quot;/pets/#{@elena.id}&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="35">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_link(@elena.name)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="37">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_on(@elena.name)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="39">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(current_path).to eq(&quot;/pets/#{@elena.id}&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="41">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="42">
+          
+          
+          <code class="ruby">#   User Story 18, Pet Links</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="43">
+          
+          
+          <code class="ruby">#</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="44">
+          
+          
+          <code class="ruby"># As a visitor</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="45">
+          
+          
+          <code class="ruby"># When I click on the name a pet anywhere on the site</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="46">
+          
+          
+          <code class="ruby"># Then that link takes me to that Pet&#39;s show page</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="47">
           
           
           <code class="ruby">end</code>

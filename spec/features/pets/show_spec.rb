@@ -28,4 +28,20 @@ RSpec.describe 'As a User', type: :feature do
     expect(page).to_not have_content(@foxy.age)
     # expect(page).to_not have_content(@foxy.sex)
   end
+
+  it 'pet name is a link that takes me to pet show page' do
+    visit "/pets/#{@elena.id}"
+
+    expect(page).to have_link(@elena.name)
+
+    click_on(@elena.name)
+
+    expect(current_path).to eq("/pets/#{@elena.id}")
+  end
+
+#   User Story 18, Pet Links
+#
+# As a visitor
+# When I click on the name a pet anywhere on the site
+# Then that link takes me to that Pet's show page
 end

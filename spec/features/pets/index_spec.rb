@@ -71,6 +71,17 @@ RSpec.describe 'As a User', type: :feature do
       expect(current_path).to eq("/pets/#{@elena.id}/edit")
   end
 
+  it 'can click on shelter name and go to shelter show page' do
+    visit "/pets"
+    within "#pet-#{@elena.id}" do
+      expect(page).to have_link(@raccoon_shelter.name)
+
+      click_on(@raccoon_shelter.name)
+
+      expect(current_path).to eq("/shelters/#{@raccoon_shelter.id}")
+    end
+  end
+
   it 'I can update a pet from pet index page' do
     visit "/shelters/#{@raccoon_shelter.id}/pets"
 
@@ -123,5 +134,15 @@ RSpec.describe 'As a User', type: :feature do
     expect(page).to_not have_content(@elena.name)
     expect(page).to_not have_content(@elena.age)
     # expect(page).to_not have_content(@elena.sex)
+  end
+
+  it 'can click on shelter name and go to shelter show page' do
+    visit "/shelters/#{@raccoon_shelter.id}/pets"
+
+    expect(page).to have_content(@raccoon_shelter.name)
+
+    click_on(@raccoon_shelter.name)
+
+    expect(current_path).to eq("/shelters/#{@raccoon_shelter.id}")
   end
 end

@@ -24,4 +24,14 @@ RSpec.describe 'As a visitor when I visit /shelters/:id', type: :feature do
     expect(page).to have_content("State: #{@dog_shelter.state}")
     expect(page).to have_content("Zip: #{@dog_shelter.zip}")
   end
+
+  it 'can click on shelter name and go to shelter show page' do
+    visit "/shelters/#{@raccoon_shelter.id}"
+
+    expect(page).to have_link(@raccoon_shelter.name)
+
+    click_on(@raccoon_shelter.name)
+
+    expect(current_path).to eq("/shelters/#{@raccoon_shelter.id}")
+  end
 end

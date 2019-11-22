@@ -86,6 +86,42 @@ RSpec.describe 'As a User', type: :feature do
       end
 
       expect(current_path).to eq("/shelters/#{@raccoon_shelter.id}/pets/#{@elena.id}/edit")
-      save_and_open_pager
+  end
+
+  it 'visit pets index page there is a delete link for every pet' do
+    visit '/pets'
+
+    within "#pet-#{@elena.id}" do
+      expect(page).to have_css("img[src*='https://imgix.ranker.com/user_node_img/50070/1001387908/original/1-photo-u1?w=650&q=50&fm=pjpg&fit=crop&crop=faces']")
+      expect(page).to have_content(@elena.shelter.name)
+      expect(page).to have_content(@elena.name)
+      expect(page).to have_content(@elena.age)
+      expect(page).to have_content(@elena.sex)
+      expect(page).to have_link('Delete Pet')
+      click_on 'Delete Pet'
+    end
+    expect(current_path).to eq('/pets')
+  end
+
+  it 'visit shelter pets index page there is a delete link for every pet' do
+    visit "/shelters/#{@raccoon_shelter.id}/pets"
+
+    within "#pet-#{@elena.id}" do
+      # binding.pry
+      expect(page).to have_css("img[src*='https://imgix.ranker.com/user_node_img/50070/1001387908/original/1-photo-u1?w=650&q=50&fm=pjpg&fit=crop&crop=faces']")
+      expect(page).to have_content(@elena.shelter.id)
+      expect(page).to have_content(@elena.name)
+      expect(page).to have_content(@elena.age)
+      expect(page).to have_content(@elena.sex)
+      expect(page).to have_link('Delete Pet')
+      click_on 'Delete Pet'
+    end
+    expect(current_path).to eq('/pets')
+
+    # expect(page).to_not have_css("img[src*='https://imgix.ranker.com/user_node_img/50070/1001387908/original/1-photo-u1?w=650&q=50&fm=pjpg&fit=crop&crop=faces']")
+    expect(page).to_not have_content(@elena.shelter.id)
+    expect(page).to_not have_content(@elena.name)
+    expect(page).to_not have_content(@elena.age)
+    # expect(page).to_not have_content(@elena.sex)
   end
 end

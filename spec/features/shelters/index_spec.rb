@@ -53,4 +53,12 @@ RSpec.describe 'As a visitor when I visit /shelters', type: :feature do
 
     expect(current_path).to eq("/shelters/#{@raccoon_shelter.id}")
   end
+
+  it 'has a home page /' do
+    visit '/'
+
+    expect(page).to have_link('Home')
+    expect(page).to have_link('Shelters')
+    expect(page).to have_link('Pets')
+  end
 end

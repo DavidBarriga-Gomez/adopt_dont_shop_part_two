@@ -43,4 +43,14 @@ RSpec.describe 'As a visitor when I visit /shelters', type: :feature do
 
       expect(page).to_not have_content(@raccoon_shelter.name)
   end
+
+  it 'can click on shelter name and go to shelter show page' do
+    visit '/shelters'
+
+    expect(page).to have_link(@raccoon_shelter.name)
+
+    click_on(@raccoon_shelter.name)
+
+    expect(current_path).to eq("/shelters/#{@raccoon_shelter.id}")
+  end
 end

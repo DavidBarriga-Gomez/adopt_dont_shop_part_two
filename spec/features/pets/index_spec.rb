@@ -145,4 +145,14 @@ RSpec.describe 'As a User', type: :feature do
 
     expect(current_path).to eq("/shelters/#{@raccoon_shelter.id}")
   end
+
+    it 'pet name is a link that takes me to pet show page' do
+      visit "/shelters/#{@raccoon_shelter.id}/pets"
+
+      expect(page).to have_link(@elena.name)
+
+      click_on(@elena.name)
+
+      expect(current_path).to eq("/pets/#{@elena.id}")
+    end
 end

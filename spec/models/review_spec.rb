@@ -9,6 +9,6 @@ RSpec.describe Review, type: :model do
   end
 
   describe 'relationships' do
-    it {should belong_to :shelters}
+    it {should belong_to :shelter}
   end
 end

@@ -1,3 +1,7 @@
  class Review < ApplicationRecord
-
- end 
+   belongs_to :shelter
+   validates_presence_of :title,
+                        :rating,
+                        :content,
+                        :picture
+ end

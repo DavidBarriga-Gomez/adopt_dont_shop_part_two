@@ -1455,6 +1455,10 @@
       ],
       "/Users/davidgomez/solo_work/adopt_dont_shop_part_two/app/models/review.rb": [
         1,
+        1,
+        1,
+        null,
+        null,
         null,
         null
       ],
@@ -1477,6 +1481,7 @@
         null
       ],
       "/Users/davidgomez/solo_work/adopt_dont_shop_part_two/app/models/shelter.rb": [
+        1,
         1,
         1,
         1,
@@ -1617,6 +1622,6 @@
         null
       ]
     },
-    "timestamp": 1575397595
+    "timestamp": 1575398946
   }
 }

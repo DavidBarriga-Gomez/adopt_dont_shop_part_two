@@ -10,6 +10,7 @@ RSpec.describe 'As a visitor when I visit /shelters/:id', type: :feature do
     @raccoon = @raccoon_shelter.pets.create(image: 'https://imgix.ranker.com/user_node_img/50070/1001387908/original/1-photo-u1?w=650&q=50&fm=pjpg&fit=crop&crop=faces', name: 'Racccoon', age: 5, sex: 'Male')
     @foxy = @dog_shelter.pets.create(image: 'https://image.pbs.org/video-assets/x1WLcZn-asset-mezzanine-16x9-6kkb4dA.jpg', name: 'Foxy', age: 5, sex: 'Female')
     @goblin = @cat_shelter.pets.create(image: 'https://static.boredpanda.com/blog/wp-content/uploads/2016/02/big-cute-eyes-cat-black-scottish-fold-gimo-1room1cat-fb__700-png.jpg', name: 'Goblin', age: 5, sex: 'Female')
+
   end
 
   it 'can view all shelter information' do
@@ -49,4 +50,21 @@ RSpec.describe 'As a visitor when I visit /shelters/:id', type: :feature do
 
     expect(current_path).to eq("/shelters/#{@raccoon_shelter.id}/pets")
   end
+
+  # it 'I see a list of reviews with a title, rating, content, and optional picture' do
+  #   visit "/shelters/#{@raccon_shelter.id}"
+  #
+  #
+  # end
+
+#   User Story 2, Shelter Reviews
+#
+# As a visitor,
+# When I visit a shelter's show page,
+# I see a list of reviews for that shelter
+# Each review will have:
+# - title
+# - rating
+# - content
+# - an optional picture
 end

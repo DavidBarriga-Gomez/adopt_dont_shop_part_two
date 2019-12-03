@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 20191203184144) do
     t.string "content"
     t.string "picture"
     t.bigint "shelter_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["shelter_id"], name: "index_reviews_on_shelter_id"
   end
 

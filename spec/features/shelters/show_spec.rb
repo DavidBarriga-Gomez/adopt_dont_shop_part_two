@@ -10,6 +10,10 @@ RSpec.describe 'As a visitor when I visit /shelters/:id', type: :feature do
     @raccoon = @raccoon_shelter.pets.create(image: 'https://imgix.ranker.com/user_node_img/50070/1001387908/original/1-photo-u1?w=650&q=50&fm=pjpg&fit=crop&crop=faces', name: 'Racccoon', age: 5, sex: 'Male')
     @foxy = @dog_shelter.pets.create(image: 'https://image.pbs.org/video-assets/x1WLcZn-asset-mezzanine-16x9-6kkb4dA.jpg', name: 'Foxy', age: 5, sex: 'Female')
     @goblin = @cat_shelter.pets.create(image: 'https://static.boredpanda.com/blog/wp-content/uploads/2016/02/big-cute-eyes-cat-black-scottish-fold-gimo-1room1cat-fb__700-png.jpg', name: 'Goblin', age: 5, sex: 'Female')
+
+    @raccoon_shelter_review_1 = @raccoon_shelter.reviews.create(title: 'Why is there a raccoon shelter?', rating: 5, content: 'this is awesome', picture: 'https://i.dailymail.co.uk/i/pix/2017/11/14/16/4658323800000578-0-image-a-2_1510676236619.jpg')
+    @raccoon_shelter_review_2 = @raccoon_shelter.reviews.create!(title: 'This is pointless', rating: 1, content: 'No one should have a raccoon!')
+    @dog_shelter_review_1 = @dog_shelter.reviews.create!(title: 'I found my dog foxy here', rating: 4, content: 'Not the dog I thought I was getting, but that is okay.')
   end
 
   it 'can view all shelter information' do
@@ -33,9 +37,11 @@ RSpec.describe 'As a visitor when I visit /shelters/:id', type: :feature do
   it 'can click on shelter name and go to shelter show page' do
     visit "/shelters/#{@raccoon_shelter.id}"
 
-    expect(page).to have_link(@raccoon_shelter.name)
+      within "#shelter-#{@raccoon_shelter.id}" do
+        expect(page).to have_link(@raccoon_shelter.name)
 
-    click_on(@raccoon_shelter.name)
+        click_on(@raccoon_shelter.name)
+  end
 
     expect(current_path).to eq("/shelters/#{@raccoon_shelter.id}")
   end
@@ -43,10 +49,31 @@ RSpec.describe 'As a visitor when I visit /shelters/:id', type: :feature do
   it 'when a user visits /shelters/:id there is a link to that shelters pet page /shelters/:id/pets' do
     visit "/shelters/#{@raccoon_shelter.id}"
 
-    expect(page).to have_link('Shelter Pets')
+      expect(page).to have_link('Shelter Pets')
 
     click_on('Shelter Pets')
 
     expect(current_path).to eq("/shelters/#{@raccoon_shelter.id}/pets")
+  end
+
+  it 'I see a list of reviews with a title, rating, content, and optional picture' do
+    visit "/shelters/#{@raccoon_shelter.id}"
+
+    within "#review-#{@raccoon_shelter_review_1.id}" do
+      expect(page).to have_content(@raccoon_shelter_review_1.title)
+      expect(page).to have_content(@raccoon_shelter_review_1.rating)
+      expect(page).to have_content(@raccoon_shelter_review_1.content)
+      expect(page).to have_css("img[src*='https://i.dailymail.co.uk/i/pix/2017/11/14/16/4658323800000578-0-image-a-2_1510676236619.jpg']")
+    end
+
+    within "#review-#{@raccoon_shelter_review_2.id}" do
+      expect(page).to have_content(@raccoon_shelter_review_2.title)
+      expect(page).to have_content(@raccoon_shelter_review_2.rating)
+      expect(page).to have_content(@raccoon_shelter_review_2.content)
+    end 
+
+    expect(page).to_not have_content(@dog_shelter_review_1.title)
+    expect(page).to_not have_content(@dog_shelter_review_1.rating)
+    expect(page).to_not have_content(@dog_shelter_review_1.content)
   end
 end

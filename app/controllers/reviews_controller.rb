@@ -6,10 +6,14 @@ class ReviewsController < ApplicationController
 
   def create
     @shelter = Shelter.find(params[:id])
-
-    @shelter.reviews.create(review_params)
-
-    redirect_to "/shelters/#{@shelter.id}"
+    review = @shelter.reviews.new(review_params)
+    
+    if review.save
+      redirect_to "/shelters/#{@shelter.id}"
+    else
+      flash[:notice] = 'Review Not Created! Make Sure To Fill In Title, Rating, And Content!'
+      render :new
+    end
   end
 
     ########### PRIVATE METHODS ###########

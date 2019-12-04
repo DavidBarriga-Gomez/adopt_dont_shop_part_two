@@ -116,4 +116,13 @@ RSpec.describe 'As a visitor when I visit /shelters/:id', type: :feature do
 
     expect(current_path).to eq("/shelters/#{@raccoon_shelter.id}")
   end
+
+    it 'can not make a new review if missing title, rating, or content fields, a flash message is shown, and you are redirected to the new form page' do
+      visit "/shelters/#{@raccoon_shelter.id}/reviews/new"
+
+      click_on('Submit')
+
+      expect(page).to have_content('Review Not Created! Make Sure To Fill In Title, Rating, And Content!')
+      expect(page).to have_button('Submit')
+    end
 end

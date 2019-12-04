@@ -1,0 +1,19 @@
+<h1>Add A New Review To A Pet Shelter</h1>
+
+<center>
+  <%= form_tag "/shelters/#{@shelter.id}", method: :post do %>
+    <%= label_tag :title %>
+    <%= text_field_tag :title %>
+
+    <%= label_tag :rating %>
+    <%= number_field_tag :rating %>
+
+    <%= label_tag :content %>
+    <%= text_field_tag :content %>
+
+    <%= label_tag :picture %>
+    <%= text_field_tag :picture %>
+
+    <%= submit_tag 'Submit' %>
+  <% end %>
+</center>

@@ -21,3 +21,5 @@
   <img src= <%= review.picture %>></img>
 </section>
 <% end %>
+
+<h3> <%= button_to 'New Review', "/shelters/#{@shelter.id}/reviews/new", method: :get %></h3>

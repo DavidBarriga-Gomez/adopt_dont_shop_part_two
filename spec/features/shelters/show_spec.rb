@@ -70,10 +70,50 @@ RSpec.describe 'As a visitor when I visit /shelters/:id', type: :feature do
       expect(page).to have_content(@raccoon_shelter_review_2.title)
       expect(page).to have_content(@raccoon_shelter_review_2.rating)
       expect(page).to have_content(@raccoon_shelter_review_2.content)
-    end 
+    end
 
     expect(page).to_not have_content(@dog_shelter_review_1.title)
     expect(page).to_not have_content(@dog_shelter_review_1.rating)
     expect(page).to_not have_content(@dog_shelter_review_1.content)
+  end
+
+  it 'There is a fully functinal link to create a new review that redirects to the shelter show page' do
+    visit "/shelters/#{@raccoon_shelter.id}"
+
+    expect(page).to have_button('New Review')
+
+    click_on('New Review')
+
+    expect(current_path).to eq("/shelters/#{@raccoon_shelter.id}/reviews/new")
+
+    title_1 = 'The Best'
+    rating_1 = 5
+    content_1 = 'I love my new raccoon, seing her grow has been amazing!'
+    picture_1 = 'http://howtodoright.com/wp-content/uploads/2017/11/Raccoon-02.jpg'
+
+    fill_in :title, with: title_1
+    fill_in :rating, with: rating_1
+    fill_in :content, with: content_1
+    fill_in :picture, with: picture_1
+    # fill_in :picture, with: 'http://howtodoright.com/wp-content/uploads/2017/11/Raccoon-02.jpg'
+
+    click_on 'Submit'
+    expect(current_path).to eq("/shelters/#{@raccoon_shelter.id}")
+
+    expect(page).to have_content(title_1)
+    expect(page).to have_content(rating_1)
+    expect(page).to have_content(content_1)
+    expect(page).to have_css("img[src*='http://howtodoright.com/wp-content/uploads/2017/11/Raccoon-02.jpg']")
+
+    click_on('New Review')
+
+    fill_in :title, with: 'title_2'
+    fill_in :rating, with: 4
+    fill_in :content, with: 'I do not have a raccoon image'
+    fill_in :picture, with: nil
+
+    click_on('Submit')
+
+    expect(current_path).to eq("/shelters/#{@raccoon_shelter.id}")
   end
 end

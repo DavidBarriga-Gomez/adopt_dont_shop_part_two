@@ -27,4 +27,5 @@ get '/', to: 'home#index'
   post '/shelters/:id', to: 'reviews#create'
   get '/shelters/:id/reviews/:id/edit', to: 'reviews#edit'
   patch '/shelters/:id/reviews/:id', to: 'reviews#update'
+  delete '/shelters/:id/reviews/:id/delete', to: 'reviews#destroy'
 end

@@ -22,15 +22,22 @@ class ReviewsController < ApplicationController
   end
 
   def update
+    @review = Review.find(params[:id])
+    @shelter = Shelter.find(@review.shelter_id)
     review = Review.find(params[:id])
-    review.update(review_params)
-  #   # review.update({
-  #   #              title: params[:title],
-  #   #              rating: params[:rating],
-  #   #              content: params[:content],
-  #   #              picture: params[:picture]
-  #   #   })
-    redirect_to "/shelters/#{review.shelter.id}"
+    if review.update(review_params)
+    # if review.save
+    #   # review.update({
+    #   #              title: params[:title],
+    #   #              rating: params[:rating],
+    #   #              content: params[:content],
+    #   #              picture: params[:picture]
+    #   #   })
+      redirect_to "/shelters/#{review.shelter.id}"
+    else
+      flash[:notice] = 'Review Not Created! Make Sure To Fill In Title, Rating, And Content!'
+      render :edit
+    end
   end
 
     ########### PRIVATE METHODS ###########
